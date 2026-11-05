@@ -10,22 +10,22 @@ Python 3.11, FastAPI, SQLAlchemy, Alembic, MySQL 8, Passlib/bcrypt, PyJWT, Pydan
 ```
 shopease-auth-service/
 ├── app/
-│   ├── main.py                  # creates app, registers router, health check
-│   ├── routers/auth_routes.py   # HTTP endpoints only
-│   ├── services/auth_service.py # business logic + DB operations
-│   ├── models/user_model.py     # SQLAlchemy users table
-│   ├── schemas/auth_schema.py   # Pydantic request/response + password rules
-│   ├── core/config.py           # settings from environment variables
-│   ├── core/security.py         # bcrypt hashing, JWT, auth dependencies
-│   └── database/connection.py   # engine, session, get_db dependency
-├── alembic/                     # migrations (versions/0001_create_users_table.py)
+│   ├── main.py                  
+│   ├── routers/auth_routes.py   
+│   ├── services/auth_service.py 
+│   ├── models/user_model.py    
+│   ├── schemas/auth_schema.py   
+│   ├── core/config.py           
+│   ├── core/security.py         
+│   └── database/connection.py   
+├── alembic/                     
 ├── alembic.ini
-├── tests/test_auth.py           # automated tests (14 scenarios + verify-token)
-├── postman/                     # Postman collection
+├── tests/test_auth.py           
+├── postman/                     
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
-├── .env.example                 # copy to .env (never commit .env)
+├── .env.example                 
 ├── .dockerignore  .gitignore
 └── README.md
 ```
@@ -96,4 +96,3 @@ Password rules: min 8 chars, upper, lower, digit, special character.
 | 13 | Change password wrong current | 400 | Pass |
 | 14 | Login with new password | 200 (old → 401) | Pass |
 
-(Replace the Result column with your own Swagger/Postman screenshots when you submit.)
